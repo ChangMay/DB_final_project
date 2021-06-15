@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CollegeSafe</title>
+  <!--<link rel="stylesheet" href="./style.css">-->
+  
+  <style>
+	input[type=text], select {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+
+	input[type=number]{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+
+	input[type=button] {
+		width: 100%;
+		background-color: #009393;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type=button]:hover{
+        color:	#009393;
+        width: 100%;
+        background-color:#fff;
+        border:5px #009393 solid;
+        margin: 8px 0;
+        padding: 14px 20px;
+    }
+
+	div {
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 20px;
+	}
+  </style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+  <h1 style="font-size:250%;text-align:center;">
+  <font face="Candara" color="#009393"><strong> CollegeSafe </strong></font>
+  </h1>
+  &nbsp;&nbsp;
+  <div class="box0">
+    <br>
+    &nbsp;&nbsp;
+    <strong>本網站提供校園周邊事故資料查詢、各縣市或車種的統計資料</strong>
+     <br>
+    &nbsp;&nbsp;
+    查詢校園周邊事故統計資料，亦可選兩間學校比較
+    <br>
+    &nbsp;&nbsp;
+    登入後可對事故資料進行增加、更改、刪減
+    <br>
+    &nbsp;&nbsp;
+    <font size="1">註：</font>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <font size="1">A1類：造成人員當場或24小時內死亡之交通事故。</font>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <font size="1">A2類：造成人員受傷或超過24時死亡之交通事故。</font>
+    <br>
+  <br>
+  </div>
+  <br>
+  <div class="box1">
+    <br>
+  <form action="./college_search.php" method="get">
+    &nbsp;&nbsp;
+    <label for="college">搜尋第一間學校: </label>
+    <select name="college" id="college" required>
+      <option value="" selected disabled>請選擇學校...</option>
+      <optgroup label="臺北市">
+        <option value="3">國立臺灣大學</option>
+        <option value="4">國立臺灣師範大學</option>
+        <option value="5">國立臺灣師範大學 - 公館校區</option>
+        <option value="1">國立政治大學</option>
+        <option value="20">國立臺北大學 - 臺北校區</option>
+        <option value="44">國立臺北教育大學</option>
+        <option value="34">國立臺北藝術大學</option>
+        <option value="166">臺北市立大學</option>
+        <option value="18">國立陽明交通大學 - 陽明校區</option>
+        <option value="10">國立陽明交通大學 - 臺北校區</option>
+        <option value="64">東吳大學 - 外雙溪校區</option>
+        <option value="65">東吳大學 - 城中校區</option>
+        <option value="91">臺北醫學大學</option>
+        <option value="68">中國文化大學</option>
+        <option value="85">大同大學</option>
+        <option value="79">銘傳大學</option>
+        <option value="78">世新大學</option>
+        <option value="80">實踐大學</option>
+        <option value="28">國立臺灣科技大學</option>
+        <option value="31">國立臺北科技大學</option>
+        <option value="57">國立臺北商業大學</option>
+        <option value="50">國立臺北護理健康大學</option>
+        <option value="51">國立臺北護理健康大學 - 城區部</option>
+        <option value="60">國立臺灣戲曲學院</option>
+        <option value="123">中華科技大學</option>
+        <option value="109">中國科技大學</option>
+        <option value="120">德明財經科技大學</option>
+        <option value="133">臺北城市科技大學</option>
+        <option value="174">國防醫學院</option>
+        <option value="161">基督教台灣浸信會神學院</option>
+        <option value="164">台灣神學院</option>
+      </optgroup>
+      <optgroup label="新北市">
+        <option value="19">國立臺北大學 - 三峽校區</option>
+        <option value="35">國立臺灣藝術大學</option>
+        <option value="67">淡江大學</option>
+        <option value="63">輔仁大學</option>
+        <option value="75">華梵大學</option>
+        <option value="84">真理大學</option>
+        <option value="158">馬偕醫學院</option>
+        <option value="159">法鼓文理學院</option>
+        <option value="117">景文科技大學</option>
+        <option value="104">明志科技大學</option>
+        <option value="107">聖約翰科技大學</option>
+        <option value="135">醒吾科技大學</option>
+        <option value="140">致理科技大學</option>
+        <option value="119">東南科技大學</option>
+        <option value="148">宏國德霖科技大學</option>
+        <option value="138">華夏科技大學</option>
+        <option value="160">台北海洋科技大學</option>
+        <option value="145">亞東技術學院</option>
+        <option value="150">黎明技術學院</option>
+        <option value="162">台北基督學院</option>
+        <option value="61">空中大學</option>
+      </optgroup>
+      <optgroup label="基隆市">
+        <option value="13">國立臺灣海洋大學</option>
+        <option value="153">崇右影藝科技大學</option>
+        <option value="152">經國管理暨健康學院</option>
+      </optgroup>
+      <optgroup label="桃園市">
+        <option value="11">國立中央大學</option>
+        <option value="49">國立體育大學</option>
+        <option value="66">中原大學</option>
+        <option value="71">長庚大學</option>
+        <option value="72">元智大學</option>
+        <option value="112">開南大學</option>
+        <option value="93">龍華科技大學</option>
+        <option value="101">萬能科技大學</option>
+        <option value="99">健行科技大學</option>
+        <option value="132">長庚科技大學</option>
+        <option value="146">南亞技術學院</option>
+        <option value="173">中央警察大學</option>
+        <option value="171">國防大學 - 率真校區</option>
+        <option value="172">國防大學 - 中正嶺校區</option>
+      </optgroup>
+      <optgroup label="新竹市">
+        <option value="8">國立陽明交通大學 - 光復校區</option>
+        <option value="9">國立陽明交通大學 - 博愛校區</option>
+        <option value="2">國立清華大學</option>
+        <option value="45">國立清華大學 - 南大校區</option>
+        <option value="73">中華大學</option>
+        <option value="102">玄奘大學</option>
+        <option value="116">元培醫事科技大學</option>
+      </optgroup>
+      <optgroup label="新竹縣">
+        <option value="95">明新科技大學</option>
+        <option value="134">敏實科技大學</option>
+      </optgroup>
+      <optgroup label="苗栗縣">
+        <option value="38">國立聯合大學</option>
+        <option value="125">育達科技大學</option>
+      </optgroup>
+      <optgroup label="臺中市">
+        <option value="7">國立中興大學</option>
+        <option value="46">國立臺中教育大學</option>
+        <option value="55">國立臺灣體育運動大學</option>
+        <option value="62">東海大學</option>
+        <option value="98">中國醫藥大學</option>
+        <option value="69">逢甲大學</option>
+        <option value="70">靜宜大學</option>
+        <option value="92">中山醫學大學</option>
+        <option value="111">亞洲大學</option>
+        <option value="56">國立臺中科技大學</option>
+        <option value="48">國立勤益科技大學</option>
+        <option value="81">朝陽科技大學</option>
+        <option value="97">弘光科技大學</option>
+        <option value="110">中臺科技大學</option>
+        <option value="108">嶺東科技大學</option>
+        <option value="124">僑光科技大學</option>
+        <option value="131">修平科技大學</option>
+      </optgroup>
+      <optgroup label="彰化縣">
+        <option value="17">國立彰化師範大學</option>
+        <option value="74">大葉大學</option>
+        <option value="121">明道大學</option>
+        <option value="103">建國科技大學</option>
+        <option value="130">中州科技大學</option>
+      </optgroup>
+      <optgroup label="南投縣">
+        <option value="27">國立暨南國際大學</option>
+        <option value="122">南開科技大學</option>
+        <option value="165">崇德學院</option>
+      </optgroup>
+      <optgroup label="雲林縣">
+        <option value="29">國立雲林科技大學</option>
+        <option value="39">國立虎尾科技大學</option>
+        <option value="128">環球科技大學</option>
+      </optgroup>
+      <optgroup label="嘉義市">
+        <option value="21">國立嘉義大學</option>
+        <option value="22">國立嘉義大學 - 新民校區</option>
+        <option value="24">國立嘉義大學 - 林森校區</option>
+        <option value="154">大同技術學院 - 嘉義校區</option>
+      </optgroup>
+      <optgroup label="嘉義縣">
+        <option value="14">國立中正大學</option>
+        <option value="23">國立嘉義大學 - 民雄校區</option>
+        <option value="83">南華大學</option>
+        <option value="127">吳鳳科技大學</option>
+        <option value="155">大同技術學院 - 太保校區</option>
+      </optgroup>
+      <optgroup label="臺南市">
+        <option value="6">國立成功大學</option>
+        <option value="43">國立臺南大學</option>
+        <option value="42">國立臺南藝術大學</option>
+        <option value="96">長榮大學</option>
+        <option value="129">臺灣首府大學</option>
+        <option value="141">康寧大學 - 臺南校區</option>
+        <option value="142">中信金融管理學院</option>
+        <option value="87">崑山科技大學</option>
+        <option value="88">嘉南藥理大學</option>
+        <option value="86">南臺科技大學</option>
+        <option value="114">臺南應用科技大學</option>
+        <option value="115">遠東科技大學</option>
+        <option value="118">中華醫事科技大學</option>
+      </optgroup>
+      <optgroup label="高雄市">
+        <option value="15">國立高雄師範大學 - 和平校區</option>
+        <option value="16">國立高雄師範大學 - 燕巢校區</option>
+        <option value="12">國立中山大學</option>
+        <option value="25">國立高雄大學</option>
+        <option value="82">高雄醫學大學</option>
+        <option value="76">義守大學</option>
+        <option value="77">義守大學 - 醫學院區</option>
+        <option value="53">國立高雄餐旅大學</option>
+        <option value="32">國立高雄科技大學 - 第一校區</option>
+        <option value="33">國立高雄科技大學 - 建工校區</option>
+        <option value="40">國立高雄科技大學 - 楠梓校區</option>
+        <option value="41">國立高雄科技大學 - 旗津校區</option>
+        <option value="94">輔英科技大學</option>
+        <option value="89">樹德科技大學</option>
+        <option value="105">高苑科技大學</option>
+        <option value="100">正修科技大學</option>
+        <option value="137">文藻外語大學</option>
+        <option value="151">東方設計大學</option>
+        <option value="169">中華民國海軍軍官學校</option>
+        <option value="170">中華民國空軍軍官學校</option>
+        <option value="168">中華民國陸軍軍官學校</option>
+        <option value="175">空軍航空技術學院</option>
+        <option value="163">一貫道天皇學院</option>
+        <option value="167">高雄市立空中大學</option>
+      </optgroup>
+      <optgroup label="屏東縣">
+        <option value="58">國立屏東大學 - 民生校區</option>
+        <option value="59">國立屏東大學 - 屏商校區</option>
+        <option value="30">國立屏東科技大學</option>
+        <option value="106">大仁科技大學</option>
+        <option value="126">美和科技大學</option>
+      </optgroup>
+      <optgroup label="宜蘭縣">
+        <option value="37">國立宜蘭大學</option>
+        <option value="113">佛光大學</option>
+      </optgroup>
+      <optgroup label="花蓮縣">
+        <option value="26">國立東華大學</option>
+        <option value="90">慈濟大學</option>
+        <option value="139">慈濟科技大學</option>
+        <option value="143">大漢技術學院</option>
+      </optgroup>
+      <optgroup label="臺東縣">
+        <option value="36">國立臺東大學</option>
+      </optgroup>
+      <optgroup label="澎湖縣">
+        <option value="47">國立澎湖科技大學</option>
+      </optgroup>
+      <optgroup label="金門縣">
+        <option value="54">國立金門大學</option>
+      </optgroup>
+      <optgroup label="連江縣">
+        
+      </optgroup>
+    </select>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<label for="college">第二間學校: </label>
+	<select name="college2" id="college2">
+      <option value="-1" selected>請選擇學校...</option>
+      <optgroup label="臺北市">
+        <option value="3">國立臺灣大學</option>
+        <option value="4">國立臺灣師範大學</option>
+        <option value="5">國立臺灣師範大學 - 公館校區</option>
+        <option value="1">國立政治大學</option>
+        <option value="20">國立臺北大學 - 臺北校區</option>
+        <option value="44">國立臺北教育大學</option>
+        <option value="34">國立臺北藝術大學</option>
+        <option value="166">臺北市立大學</option>
+        <option value="18">國立陽明交通大學 - 陽明校區</option>
+        <option value="10">國立陽明交通大學 - 臺北校區</option>
+        <option value="64">東吳大學 - 外雙溪校區</option>
+        <option value="65">東吳大學 - 城中校區</option>
+        <option value="91">臺北醫學大學</option>
+        <option value="68">中國文化大學</option>
+        <option value="85">大同大學</option>
+        <option value="79">銘傳大學</option>
+        <option value="78">世新大學</option>
+        <option value="80">實踐大學</option>
+        <option value="28">國立臺灣科技大學</option>
+        <option value="31">國立臺北科技大學</option>
+        <option value="57">國立臺北商業大學</option>
+        <option value="50">國立臺北護理健康大學</option>
+        <option value="51">國立臺北護理健康大學 - 城區部</option>
+        <option value="60">國立臺灣戲曲學院</option>
+        <option value="123">中華科技大學</option>
+        <option value="109">中國科技大學</option>
+        <option value="120">德明財經科技大學</option>
+        <option value="133">臺北城市科技大學</option>
+        <option value="174">國防醫學院</option>
+        <option value="161">基督教台灣浸信會神學院</option>
+        <option value="164">台灣神學院</option>
+      </optgroup>
+      <optgroup label="新北市">
+        <option value="19">國立臺北大學 - 三峽校區</option>
+        <option value="35">國立臺灣藝術大學</option>
+        <option value="67">淡江大學</option>
+        <option value="63">輔仁大學</option>
+        <option value="75">華梵大學</option>
+        <option value="84">真理大學</option>
+        <option value="158">馬偕醫學院</option>
+        <option value="159">法鼓文理學院</option>
+        <option value="117">景文科技大學</option>
+        <option value="104">明志科技大學</option>
+        <option value="107">聖約翰科技大學</option>
+        <option value="135">醒吾科技大學</option>
+        <option value="140">致理科技大學</option>
+        <option value="119">東南科技大學</option>
+        <option value="148">宏國德霖科技大學</option>
+        <option value="138">華夏科技大學</option>
+        <option value="160">台北海洋科技大學</option>
+        <option value="145">亞東技術學院</option>
+        <option value="150">黎明技術學院</option>
+        <option value="162">台北基督學院</option>
+        <option value="61">空中大學</option>
+      </optgroup>
+      <optgroup label="基隆市">
+        <option value="13">國立臺灣海洋大學</option>
+        <option value="153">崇右影藝科技大學</option>
+        <option value="152">經國管理暨健康學院</option>
+      </optgroup>
+      <optgroup label="桃園市">
+        <option value="11">國立中央大學</option>
+        <option value="49">國立體育大學</option>
+        <option value="66">中原大學</option>
+        <option value="71">長庚大學</option>
+        <option value="72">元智大學</option>
+        <option value="112">開南大學</option>
+        <option value="93">龍華科技大學</option>
+        <option value="101">萬能科技大學</option>
+        <option value="99">健行科技大學</option>
+        <option value="132">長庚科技大學</option>
+        <option value="146">南亞技術學院</option>
+        <option value="173">中央警察大學</option>
+        <option value="171">國防大學 - 率真校區</option>
+        <option value="172">國防大學 - 中正嶺校區</option>
+      </optgroup>
+      <optgroup label="新竹市">
+        <option value="8">國立陽明交通大學 - 光復校區</option>
+        <option value="9">國立陽明交通大學 - 博愛校區</option>
+        <option value="2">國立清華大學</option>
+        <option value="45">國立清華大學 - 南大校區</option>
+        <option value="73">中華大學</option>
+        <option value="102">玄奘大學</option>
+        <option value="116">元培醫事科技大學</option>
+      </optgroup>
+      <optgroup label="新竹縣">
+        <option value="95">明新科技大學</option>
+        <option value="134">敏實科技大學</option>
+      </optgroup>
+      <optgroup label="苗栗縣">
+        <option value="38">國立聯合大學</option>
+        <option value="125">育達科技大學</option>
+      </optgroup>
+      <optgroup label="臺中市">
+        <option value="7">國立中興大學</option>
+        <option value="46">國立臺中教育大學</option>
+        <option value="55">國立臺灣體育運動大學</option>
+        <option value="62">東海大學</option>
+        <option value="98">中國醫藥大學</option>
+        <option value="69">逢甲大學</option>
+        <option value="70">靜宜大學</option>
+        <option value="92">中山醫學大學</option>
+        <option value="111">亞洲大學</option>
+        <option value="56">國立臺中科技大學</option>
+        <option value="48">國立勤益科技大學</option>
+        <option value="81">朝陽科技大學</option>
+        <option value="97">弘光科技大學</option>
+        <option value="110">中臺科技大學</option>
+        <option value="108">嶺東科技大學</option>
+        <option value="124">僑光科技大學</option>
+        <option value="131">修平科技大學</option>
+      </optgroup>
+      <optgroup label="彰化縣">
+        <option value="17">國立彰化師範大學</option>
+        <option value="74">大葉大學</option>
+        <option value="121">明道大學</option>
+        <option value="103">建國科技大學</option>
+        <option value="130">中州科技大學</option>
+      </optgroup>
+      <optgroup label="南投縣">
+        <option value="27">國立暨南國際大學</option>
+        <option value="122">南開科技大學</option>
+        <option value="165">崇德學院</option>
+      </optgroup>
+      <optgroup label="雲林縣">
+        <option value="29">國立雲林科技大學</option>
+        <option value="39">國立虎尾科技大學</option>
+        <option value="128">環球科技大學</option>
+      </optgroup>
+      <optgroup label="嘉義市">
+        <option value="21">國立嘉義大學</option>
+        <option value="22">國立嘉義大學 - 新民校區</option>
+        <option value="24">國立嘉義大學 - 林森校區</option>
+        <option value="154">大同技術學院 - 嘉義校區</option>
+      </optgroup>
+      <optgroup label="嘉義縣">
+        <option value="14">國立中正大學</option>
+        <option value="23">國立嘉義大學 - 民雄校區</option>
+        <option value="83">南華大學</option>
+        <option value="127">吳鳳科技大學</option>
+        <option value="155">大同技術學院 - 太保校區</option>
+      </optgroup>
+      <optgroup label="臺南市">
+        <option value="6">國立成功大學</option>
+        <option value="43">國立臺南大學</option>
+        <option value="42">國立臺南藝術大學</option>
+        <option value="96">長榮大學</option>
+        <option value="129">臺灣首府大學</option>
+        <option value="141">康寧大學 - 臺南校區</option>
+        <option value="142">中信金融管理學院</option>
+        <option value="87">崑山科技大學</option>
+        <option value="88">嘉南藥理大學</option>
+        <option value="86">南臺科技大學</option>
+        <option value="114">臺南應用科技大學</option>
+        <option value="115">遠東科技大學</option>
+        <option value="118">中華醫事科技大學</option>
+      </optgroup>
+      <optgroup label="高雄市">
+        <option value="15">國立高雄師範大學 - 和平校區</option>
+        <option value="16">國立高雄師範大學 - 燕巢校區</option>
+        <option value="12">國立中山大學</option>
+        <option value="25">國立高雄大學</option>
+        <option value="82">高雄醫學大學</option>
+        <option value="76">義守大學</option>
+        <option value="77">義守大學 - 醫學院區</option>
+        <option value="53">國立高雄餐旅大學</option>
+        <option value="32">國立高雄科技大學 - 第一校區</option>
+        <option value="33">國立高雄科技大學 - 建工校區</option>
+        <option value="40">國立高雄科技大學 - 楠梓校區</option>
+        <option value="41">國立高雄科技大學 - 旗津校區</option>
+        <option value="94">輔英科技大學</option>
+        <option value="89">樹德科技大學</option>
+        <option value="105">高苑科技大學</option>
+        <option value="100">正修科技大學</option>
+        <option value="137">文藻外語大學</option>
+        <option value="151">東方設計大學</option>
+        <option value="169">中華民國海軍軍官學校</option>
+        <option value="170">中華民國空軍軍官學校</option>
+        <option value="168">中華民國陸軍軍官學校</option>
+        <option value="175">空軍航空技術學院</option>
+        <option value="163">一貫道天皇學院</option>
+        <option value="167">高雄市立空中大學</option>
+      </optgroup>
+      <optgroup label="屏東縣">
+        <option value="58">國立屏東大學 - 民生校區</option>
+        <option value="59">國立屏東大學 - 屏商校區</option>
+        <option value="30">國立屏東科技大學</option>
+        <option value="106">大仁科技大學</option>
+        <option value="126">美和科技大學</option>
+      </optgroup>
+      <optgroup label="宜蘭縣">
+        <option value="37">國立宜蘭大學</option>
+        <option value="113">佛光大學</option>
+      </optgroup>
+      <optgroup label="花蓮縣">
+        <option value="26">國立東華大學</option>
+        <option value="90">慈濟大學</option>
+        <option value="139">慈濟科技大學</option>
+        <option value="143">大漢技術學院</option>
+      </optgroup>
+      <optgroup label="臺東縣">
+        <option value="36">國立臺東大學</option>
+      </optgroup>
+      <optgroup label="澎湖縣">
+        <option value="47">國立澎湖科技大學</option>
+      </optgroup>
+      <optgroup label="金門縣">
+        <option value="54">國立金門大學</option>
+      </optgroup>
+      <optgroup label="連江縣">
+        
+      </optgroup>
+    </select>
+    <br><br>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" value="搜尋">
+  </form>
+  </div>
+  <br>
+  <div class="box2">
+  <input type="button" value="107-109年A1, A2事故各縣市統計" onclick="location.href='county_stats.php'">
+  <br>&nbsp;
+  <input type="button" value="107-109年A1, A2事故車種統計" onclick="location.href='vehicle.php'">
+  <br>&nbsp;
+  <input type="button" value="以管理員身分登入" onclick="location.href='login_page.php'">
+  <br>
+  </div>
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
